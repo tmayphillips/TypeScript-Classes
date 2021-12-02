@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  
+    <div class = 'container'>
+        <div class = 'row'>
+            <div class = 'column'>
+                <h1>MPR Star</h1>
+            </div>
+            <div id = 'planet-list' class = 'planet-list'></div>
+            <div id = 'add-planet'>
+              <h2>Add planet to inventory (admins only)</h2>
+                <input type="password" id="password" name="password" placeholder='enter password'>
+                <button type='submit' id='submit-password-btn' class = 'btn'>Submit</button>
+            </div>
+            <div id='info-section' class='info-section'></div>
+            <button id='submit-planet-btn' class='btn'>Submit</button>
+        </div>
+    </div>
+
+
+  <script>var exports = {};</script>
+  <script type='module' src="app.js"></script>
+</body>
+</html>
