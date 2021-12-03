@@ -23,7 +23,135 @@
             <div id='info-section' class='info-section'></div>
             <button id='submit-planet-btn' class='btn'>Submit</button>
         </div>
+        <br>
+        <hr>
+        <div class='definitions'>
+          <div >
+            <h2>TypeScript Classes</h2>
+            <p>
+              A TypeScript class is declared with the class keyword followed by the class name.<br>
+              Inside the class we can define variables, constructors, and functions.
+            </p>
+            <pre><code>
+              class Planet {
+                listOfPlanets:Planet[] = []
+                name:string
+              
+                constructor(name:string) {
+                  this.name = name
+                }
+          
+                displayPlanet():void {
+                  { add planet to html page }
+                }
+              }
+            </code></pre>
+          </div>
+          <h2>Inheritance</h2>
+          <p>A subclass inherits all of the properties and methods of its parent class.</p>
+          <pre><code>
+            class Planet {
+              listOfPlanets:Planet[] = []
+              name:string
+            
+              constructor(name:string) {
+                this.name = name
+              }
+
+              class GasGiant extends Planet { 
+                constructor(name:string) {
+                    super(name) 
+              }
+          </code></pre>
+          <div>
+            <h2>Getters and Setters</h2>
+            <p></p>
+          </div>
+          <div>
+            <h2>Visibility</h2>
+            <h3>Public</h3>
+            <p>
+              Public is the default visibility for class members, and they can be accessed from anywhere. <br>
+              There is no need to write public, but can add it for readability.
+            </p>
+            <pre><code>
+              class Planet {
+                displayPlanet():void {
+                  { add planet to html page }
+                }
+              }
+
+              displayPlanet()
+            </code></pre>
+            <h3>Protected</h3>
+            <p>
+              Protected members are only visible to the subclasses of their class.
+            </p>
+            <pre><code>
+              class Planet {
+                protected displayPlanet():void {
+                  { add planet to html page }
+                }
+              }
+
+              class IceGiant extends Planet {
+                public display() {
+                  this.displayPlanet()
+                }
+              }
+
+            </code></pre>
+            <h3>Private</h3>
+            <p>
+              Private members can only be accessed within the same class.
+            </p>
+            <pre><code>
+              class Planet {
+                displayPlanet():void {
+                  { add planet to html page }
+                }
+
+                displayPlanet()
+              }
+            </code></pre>
+            <h3>Static</h3>
+            <p>
+              Static members are not associated with any particular instance of a class. <br>
+              They can be accessed using dot notation. They can be public, private, or protected.
+            </p>
+            <pre><code>
+              class Planet {
+                public static listOfPlanets:Planet[] = []
+                name:string
+              }
+
+              newPlanet = new Planet(name);
+              Planet.listOfPlanets.push(newPlanet);
+            </code></pre>
+            <h3>All Together</h3>
+            <pre><code>
+              class Planet {
+                public static listOfPlanets:Planet[] = []
+                name:string
+              }
+
+              class IceGiant extends Planet {
+                public display() {
+                  this.displayPlanet()
+                }
+              }
+
+              function createNewPlanet (name:string): void {
+                newPlanet = new IceGiant(name);
+                Planet.listOfPlanets.push(newPlanet);
+                (<IceGiant>newPlanet).display();
+              }
+            </code></pre>
+          </div>
+        </div>
     </div>
+
+    
 
 
   <script>var exports = {};</script>

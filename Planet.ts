@@ -23,7 +23,6 @@ export default class Planet {
             <p>Radius: ${planet.size}
             <br>Parent Star: ${planet.parentStar}
             `
-
             planetList.appendChild(newPlanet);
         }
     }
