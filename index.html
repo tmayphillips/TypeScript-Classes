@@ -134,7 +134,8 @@
             <pre><code>
               class Planet {
                 protected displayPlanet(): void {
-                  let fluids = <IceGiant>planet).fluids
+                  let planet = Planet.listOfPlanets[0]
+                  let fluids = &lt;IceGiant&gt;planet.fluids
                 }
                 
               }
@@ -161,9 +162,8 @@
                 private name:string
 
                 protected displayPlanet(): void {
-                  let nameField = (<HTMLInputElement>someElement).value;
-                  Planet.listOfPlanets[planetIndex].planetName = nameField;
-                  this.displayPlanet();
+                  let newName = (&lt;HTMLInputElement&gt;someElement).value;
+                  Planet.listOfPlanets[planetIndex].planetName = newName;
                 }
             
                 public set planetName(newName:string){
@@ -182,8 +182,11 @@
                 }
 
                 protected displayPlanet(): void {
-                  Planet.listOfPlanets[planetIndex].planetName = nameField;
-                  this.displayPlanet();
+                  let planet = Planet.listOfPlanets[0]
+                  let fluids = &lt;IceGiant&gt;planet.fluids
+
+                  let newName = (&lt;HTMLInputElement&gt;someElement).value;
+                  Planet.listOfPlanets[planetIndex].planetName = newName;
                 }
             
                 public set planetName(newName:string){
@@ -210,7 +213,7 @@
               function createNewPlanet (name:string): void {
                 newPlanet = new IceGiant(name);
                 Planet.listOfPlanets.push(newPlanet);
-                (<IceGiant>newPlanet).display();
+                (&lt;IceGiant&gt;newPlanet).display();
               }
             </code></pre>
             <h2>Chaining</h2>
