@@ -34,7 +34,7 @@
             <pre><code>
               class Planet {
                 listOfPlanets:Planet[] = []
-                name:string
+                private name:string
               
                 constructor(name:string) {
                   this.name = name
@@ -51,14 +51,14 @@
           <pre><code>
             class Planet {
               listOfPlanets:Planet[] = []
-              name:string
+              private name:string
             
               constructor(name:string) {
                 this.name = name
             }
 
             class GasGiant extends Planet { 
-              gases:string[]
+              private gases:string[]
               constructor(name:string) {
                   super(name) 
                   this.gases = gases
@@ -105,12 +105,16 @@
             </p>
             <pre><code>
               class Planet {
+                private name:string
                 displayPlanet():void {
-                  { add planet to html page }
+                  { 
+                    this.name
+                  }
                 }
-
-                displayPlanet()
               }
+
+              let newPlanet = new Planet()
+              <strike>planet.name = 'new bad name'</strike>
             </code></pre>
             <h3>Static</h3>
             <p>
@@ -140,7 +144,7 @@
                 
               }
               class IceGiant extends Planet {
-                fluidElements:string[];
+                private fluidElements:string[];
                 constructor(fluidElements:string[]) {
                     super() 
                     this.fluidElements = fluidElements;
@@ -211,7 +215,7 @@
               }
 
               function createNewPlanet (name:string): void {
-                newPlanet = new IceGiant(name);
+                let newPlanet = new IceGiant(name);
                 Planet.listOfPlanets.push(newPlanet);
                 (&lt;IceGiant&gt;newPlanet).display();
               }
