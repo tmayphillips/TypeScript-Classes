@@ -9,6 +9,6 @@ export default class GasGiant extends Planet {
         this.displayPlanet();
     }
     get gasList() {
-        return this.gases.join(' , ');
+        return this.gases.join(', ');
     }
 }

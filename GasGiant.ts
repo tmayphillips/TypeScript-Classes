@@ -12,6 +12,6 @@ export default class GasGiant extends Planet { // inheritance
         this.displayPlanet()
     }
     public get gasList():string{
-        return this.gases.join(' , ')
+        return this.gases.join(', ')
     }
 }

@@ -8,6 +8,6 @@ export default class IceGiant extends Planet {
         this.displayPlanet();
     }
     get fluids() {
-        return this.fluidElements.join(' , ');
+        return this.fluidElements.join(', ');
     }
 }

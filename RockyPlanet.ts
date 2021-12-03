@@ -12,6 +12,6 @@ export default class RockyPlanet extends Planet {
     }
 
     public get coreComp():string{
-        return this.coreComponents.join(' , ')
+        return this.coreComponents.join(', ')
     }
 }
