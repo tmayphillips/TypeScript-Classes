@@ -8,7 +8,6 @@
 </head>
 
 <body>
-  
     <div class = 'container'>
         <div class = 'row'>
             <div class = 'column'>
@@ -56,12 +55,14 @@
             
               constructor(name:string) {
                 this.name = name
-              }
+            }
 
-              class GasGiant extends Planet { 
-                constructor(name:string) {
-                    super(name) 
-              }
+            class GasGiant extends Planet { 
+              gases:string[]
+              constructor(name:string) {
+                  super(name) 
+                  this.gases = gases
+            }
           </code></pre>
          
           <div>
@@ -119,14 +120,24 @@
             <pre><code>
               class Planet {
                 public static listOfPlanets:Planet[] = []
-                name:string
+                private name:string
               }
 
               newPlanet = new Planet(name);
               Planet.listOfPlanets.push(newPlanet);
             </code></pre>
-            <h3>Getters</h3>
+            <h2>Getters</h2>
+            <p>
+              A getter is also called an accessor. <br>
+              A getter method returns the value of the property's value.
+            </p>
             <pre><code>
+              class Planet {
+                protected displayPlanet(): void {
+                  let fluids = <IceGiant>planet).fluids
+                }
+                
+              }
               class IceGiant extends Planet {
                 fluidElements:string[];
                 constructor(fluidElements:string[]) {
@@ -139,16 +150,60 @@
                 }
             }
             </code></pre>
-            <h3>All Together</h3>
+            <h2>Setters</h2>
+            <p>
+              A setter is also called a mutator. <br>
+              A setter method updates the property's value.
+            </p>
             <pre><code>
               class Planet {
                 public static listOfPlanets:Planet[] = []
-                name:string
+                private name:string
+
+                protected displayPlanet(): void {
+                  let nameField = (<HTMLInputElement>someElement).value;
+                  Planet.listOfPlanets[planetIndex].planetName = nameField;
+                  this.displayPlanet();
+                }
+            
+                public set planetName(newName:string){
+                  this.name = newName;
+                }
+              }
+            </code></pre>
+            <h2>All Together</h2>
+            <pre><code>
+              class Planet {
+                public static listOfPlanets:Planet[] = []
+                private name: string
+
+                constructor(name:string) {
+                  this.name = name
+                }
+
+                protected displayPlanet(): void {
+                  Planet.listOfPlanets[planetIndex].planetName = nameField;
+                  this.displayPlanet();
+                }
+            
+                public set planetName(newName:string){
+                  this.name = newName;
+                }
               }
 
               class IceGiant extends Planet {
+                fluidElements:string[];
+                constructor(fluidElements:string[]) {
+                    super() 
+                    this.fluidElements = fluidElements;
+                }
+
                 public display() {
                   this.displayPlanet()
+                }
+            
+                public get fluids():string{
+                    return this.fluidElements.join(' , ')
                 }
               }
 
@@ -158,12 +213,29 @@
                 (<IceGiant>newPlanet).display();
               }
             </code></pre>
+            <h2>Chaining</h2>
+            <pre><code>
+              class numbOp {
+                private n:number;
+                constructor(num:number) {
+                    this.n = num;
+                }
+            
+                public add(inc:number = 1):this
+                    this.n = this.n + inc;
+                    return this;
+                }
+                toString() { 
+                    return this.n;
+                }
+              }
+
+              let finalNumber = new numbOp(3).add().add(2).toString();
+              console.log(finalNumber) // Output: "6"
+            </code></pre>
           </div>
         </div>
     </div>
-
-    
-
 
   <script>var exports = {};</script>
   <script type='module' src="app.js"></script>
