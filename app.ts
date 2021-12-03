@@ -41,6 +41,7 @@ function displayInventoryForm() {
         <label for="planet-parent">Parent Star</label>
         <input type='text' id="planet-parent" name="planet-parent"><br>
         <select name="planet-type" id="planet-type">
+            <option value="select">Select Type</option>
             <option value="rocky">Rocky Planet</option>
             <option value="gas">Gas Giant</option>
             <option value="ice">Ice Giant</option>
@@ -117,6 +118,12 @@ function displayInventoryForm() {
             methaneCheckbox = (<HTMLInputElement>document.getElementById('methane'))
             waterCheckbox = (<HTMLInputElement>document.getElementById('water'))
         }
+
+        if(typeSelect.value === 'select') {
+            infoFormDiv.innerHTML = `<p>Select a type</p>`
+        }
+        submitPlanetBtn.style.display = 'block'
+
     })
 
     submitPlanetBtn.addEventListener('click', event => {
