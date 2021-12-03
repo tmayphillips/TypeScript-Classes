@@ -104,9 +104,8 @@ function displayInventoryForm() {
             waterCheckbox = document.getElementById('water');
         }
         if (typeSelect.value === 'select') {
-            infoFormDiv.innerHTML = `<p>Select a type</p>`;
+            infoFormDiv.innerHTML = ``;
         }
-        submitPlanetBtn.style.display = 'block';
     });
     submitPlanetBtn.addEventListener('click', event => {
         event.preventDefault();
@@ -161,6 +160,7 @@ function displayInventoryForm() {
             };
             createNewPlanet(name, type, info);
         }
+        infoFormDiv.innerHTML = ``;
     });
 }
 function createNewPlanet(name, type, info) {

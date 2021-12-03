@@ -120,9 +120,8 @@ function displayInventoryForm() {
         }
 
         if(typeSelect.value === 'select') {
-            infoFormDiv.innerHTML = `<p>Select a type</p>`
+            infoFormDiv.innerHTML = ``
         }
-        submitPlanetBtn.style.display = 'block'
 
     })
 
@@ -187,6 +186,8 @@ function displayInventoryForm() {
 
             createNewPlanet(name, type, <Info>info)
         }  
+
+        infoFormDiv.innerHTML = ``
     })
 }
 

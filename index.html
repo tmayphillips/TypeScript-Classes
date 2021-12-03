@@ -63,10 +63,7 @@
                     super(name) 
               }
           </code></pre>
-          <div>
-            <h2>Getters and Setters</h2>
-            <p></p>
-          </div>
+         
           <div>
             <h2>Visibility</h2>
             <h3>Public</h3>
@@ -127,6 +124,20 @@
 
               newPlanet = new Planet(name);
               Planet.listOfPlanets.push(newPlanet);
+            </code></pre>
+            <h3>Getters</h3>
+            <pre><code>
+              class IceGiant extends Planet {
+                fluidElements:string[];
+                constructor(fluidElements:string[]) {
+                    super() 
+                    this.fluidElements = fluidElements;
+                }
+            
+                public get fluids():string{
+                    return this.fluidElements.join(' , ')
+                }
+            }
             </code></pre>
             <h3>All Together</h3>
             <pre><code>
