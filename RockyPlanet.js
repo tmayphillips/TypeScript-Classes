@@ -7,4 +7,7 @@ export default class RockyPlanet extends Planet {
     display() {
         this.displayPlanet();
     }
+    get coreComp() {
+        return this.coreComponents.join(' , ');
+    }
 }
